@@ -566,9 +566,11 @@ const searchTerm = document.querySelector(".search-term");
 
 function getNews(e) {
   const keyword = newsInput.value;
-  const apiKey = "7d846c5d829b42af8f61f7a9b2db8fd3";
+  const apiKey = "5mYAsIyMJEbCAJL0X1rhALA4CTsgb7QP";
   e.preventDefault();
-  fetch(`https://newsapi.org/v2/everything?q=${keyword}&apiKey=${apiKey}`)
+  fetch(
+    `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${keyword}&api-key=${apiKey}`
+  )
     .then((response) => response.json())
     .then((data) => displayNews(data));
 }
@@ -576,30 +578,29 @@ function displayNews(data) {
   searchTerm.innerText = '"' + newsInput.value + '"';
   newsList.innerHTML = "";
   newsInput.value = "";
-  console.log(data);
-  data.articles.forEach((article) => {
+  data.response.docs.forEach((article) => {
     let li = document.createElement("li");
-    let img = document.createElement("img");
     let div = document.createElement("div");
+    let h3 = document.createElement("h3");
     let h4 = document.createElement("h4");
     let h5 = document.createElement("h5");
     let h6 = document.createElement("h6");
     let a = document.createElement("a");
 
     li.classList.add("news-item");
-    img.setAttribute("src", article.urlToImage);
-    h4.innerText = article.title;
-    h5.innerText = article.author;
-    h6.innerText = article.source.name;
-    a.setAttribute("href", article.url);
+    h3.innerText = article.headline.main;
+    h4.innerText = article.abstract;
+    h5.innerText = article.byline.original;
+    h6.innerText = article.source;
+    a.setAttribute("href", article.web_url);
     a.setAttribute("target", "_blank");
     a.innerText = "View Article";
 
+    div.appendChild(h3);
     div.appendChild(h4);
     div.appendChild(h5);
     div.appendChild(h6);
     div.appendChild(a);
-    li.appendChild(img);
     li.appendChild(div);
     newsList.appendChild(li);
   });

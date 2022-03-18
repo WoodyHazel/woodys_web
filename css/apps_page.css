@@ -269,13 +269,20 @@
   align-items: center;
   justify-content: space-between;
 }
+.news-list li div h3 {
+  text-align: center;
+  padding: 10px 5px;
+}
 .news-list li div h4 {
   text-align: left;
-  padding: 10px 5px;
+  padding: 10px 5px 20px;
+  font-weight: 300;
+  line-height: 1.5;
 }
 .news-list li div h5 {
   font-style: italic;
   font-weight: 500;
+  padding-bottom: 10px;
 }
 .news-list li div h6 {
   padding: 15px;
