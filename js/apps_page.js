@@ -564,8 +564,6 @@ const newsList = document.querySelector(".news-list");
 const newsForm = document.querySelector(".news-form");
 const searchTerm = document.querySelector(".search-term");
 
-newsForm.addEventListener("submit", getNews);
-
 function getNews(e) {
   const keyword = newsInput.value;
   const apiKey = "7d846c5d829b42af8f61f7a9b2db8fd3";
@@ -578,8 +576,7 @@ function displayNews(data) {
   searchTerm.innerText = '"' + newsInput.value + '"';
   newsList.innerHTML = "";
   newsInput.value = "";
-  let articles = data.articles;
-  articles.forEach((article) => {
+  data.articles.forEach((article) => {
     let li = document.createElement("li");
     let img = document.createElement("img");
     let div = document.createElement("div");
@@ -606,3 +603,5 @@ function displayNews(data) {
     newsList.appendChild(li);
   });
 }
+
+newsForm.addEventListener("submit", getNews);
