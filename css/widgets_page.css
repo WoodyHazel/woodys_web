@@ -1,0 +1,162 @@
+.widgets-page {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1.5fr 1fr 1fr;
+  gap: 10px;
+  padding: 0 10px;
+}
+.widgets-page .widget {
+  background-color: var(--primary-color);
+  border-radius: 5px;
+  text-align: center;
+  overflow-y: scroll;
+}
+.widget header {
+  width: 100%;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #fff;
+}
+
+/* Weather Widget */
+header.search {
+  justify-content: center;
+}
+.weather-widget h2 {
+  padding: 0 5px;
+  font-size: 1.2rem;
+  padding-right: 15px;
+}
+.search input {
+  padding: 7px 10px;
+  border-radius: 2px;
+  border: none;
+}
+.search button {
+  border: none;
+  background-color: var(--light-color);
+  padding: 5px 6px;
+  margin-left: 5px;
+  border-radius: 50%;
+  color: var(--accent-color);
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+.search button:hover {
+  background-color: #fff;
+}
+.weather {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 5px;
+}
+.weather .container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.weather .container:first-of-type {
+  font-size: 1.1rem;
+}
+.city {
+  font-weight: 500;
+}
+.temp {
+  font-weight: 300;
+}
+.city,
+.high,
+.humidity {
+  padding-right: 10px;
+}
+.weather .container:last-of-type {
+  padding-top: 10px;
+  font-size: 0.9rem;
+}
+
+/* Fact Widget & WOD Widget */
+
+.fact-widget h2,
+.wod-widget h2 {
+  font-size: 1.2rem;
+  padding: 5px;
+}
+.fact-widget i,
+.wod-widget i {
+  color: var(--accent-color);
+  cursor: pointer;
+  font-size: 1.3rem;
+}
+.fact-widget p,
+.wod-widget p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  padding: 10px;
+  text-align: left;
+}
+.wod-widget .container {
+  padding: 10px 10px 0;
+  display: flex;
+  align-items: center;
+}
+.word {
+  padding-right: 10px;
+}
+.wod-widget .definition {
+  padding-bottom: 1rem;
+}
+
+/* Media Queries */
+@media only screen and (min-width: 768px) {
+  .widgets-page {
+    padding: 0 80px;
+    gap: 20px;
+  }
+  .widgets-page header {
+    padding: 1rem;
+    justify-content: center;
+  }
+  .widgets-page header h2 {
+    padding-right: 10px;
+  }
+  .weather {
+    gap: 10px;
+  }
+  .fact-widget .fact {
+    padding: 1rem 2rem;
+  }
+  .wod-widget .container {
+    padding: 1rem 2rem;
+  }
+  .wod-widget .definition {
+    padding: 0 2rem 1rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .widgets-page {
+    padding: 0 15%;
+  }
+  .widgets-page {
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "a a"
+      "b c";
+  }
+  .weather-widget {
+    grid-area: a;
+  }
+  .fact-widget {
+    grid-area: b;
+  }
+  .wod-widget {
+    grid-area: c;
+  }
+}
