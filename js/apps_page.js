@@ -576,6 +576,7 @@ function displayNews(data) {
   searchTerm.innerText = '"' + newsInput.value + '"';
   newsList.innerHTML = "";
   newsInput.value = "";
+  console.log(data);
   data.articles.forEach((article) => {
     let li = document.createElement("li");
     let img = document.createElement("img");

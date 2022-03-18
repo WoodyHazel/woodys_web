@@ -222,7 +222,7 @@
   margin-left: 5px;
 }
 .news-form .news-submit {
-  background-color: var(--secondary-color);
+  background-color: var(--accent-color);
   color: #fff;
   width: 30%;
   font-size: 0.9rem;
