@@ -660,3 +660,6 @@ section.settings .section-img {
     max-height: 80vh;
   }
 }
+
+@media only screen and (min-width: 1440px) {
+}

@@ -149,6 +149,9 @@ body {
   font-weight: 400;
   width: 100%;
 }
+.main-header .page-title a {
+  color: #fff;
+}
 .main-header button {
   outline: none;
   border: none;
