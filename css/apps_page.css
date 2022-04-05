@@ -2,16 +2,19 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  gap: 10px;
-  padding: 0 10px;
+  padding: 0 5px;
+}
+.apps-page section {
+  margin: 5px;
 }
 .apps-page .section-title {
-  padding-top: 10px;
+  padding-top: 8px;
   font-size: 1rem;
 }
 .apps-page .section-container {
   transition: transform 600ms ease-in-out;
 }
+
 
 /* Task List App */
 .task-list-app .section-img {
@@ -51,6 +54,7 @@
   box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.2);
   font-size: 0.9rem;
   letter-spacing: 1px;
+  cursor: pointer;
 }
 .task-list-item {
   padding: 10px 5px;
@@ -77,6 +81,7 @@
   border-radius: 2px;
   background-color: var(--light-color);
   box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }
 .clear-tasks button:hover {
   background-color: #fff;
@@ -107,12 +112,15 @@
   color: blue;
   border-radius: 2px;
   font-size: 1rem;
+  cursor: pointer;
+
 }
 .blackjack-game-container .card {
   width: 45px;
 }
 .btn-container {
   margin-top: 20px;
+
 }
 .btn-container button {
   width: 80px;
@@ -124,10 +132,14 @@
 .btn-container .hit {
   color: rgb(211, 0, 0);
   border: 1px solid rgb(211, 0, 0);
+  cursor: pointer;
+
 }
 .btn-container .stand {
   color: rgb(133, 0, 177);
   border: 1px solid rgb(133, 0, 177);
+  cursor: pointer;
+
 }
 .player-hand,
 .dealer-hand {
@@ -140,7 +152,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+}
+.hand h3 {
+  margin-bottom: 10px;
 }
 .hand div {
   display: flex;
@@ -303,7 +317,9 @@
 @media only screen and (min-width: 768px) {
   .apps-page {
     padding: 0 20px;
-    column-gap: 20px;
+  }
+  .apps-page section {
+    margin: 5px 10px;
   }
   .apps-page .section-title {
     font-size: 1.4em;
@@ -322,7 +338,6 @@
   }
   .news-form {
     padding: 1rem;
-    gap: 20px;
     font-size: 1.4em;
   }
   .news-container h3 {
@@ -336,7 +351,6 @@
 @media only screen and (min-width: 1024px) {
   .apps-page {
     padding: 0 15%;
-    column-gap: 5%;
   }
   .blackjack-game-container {
     width: 60%;

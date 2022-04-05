@@ -2,7 +2,6 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1.5fr 1fr 1fr;
-  gap: 10px;
   padding: 0 10px;
 }
 .widgets-page .widget {
@@ -11,6 +10,9 @@
   text-align: center;
   overflow-y: scroll;
 }
+.fact-widget {
+  margin: 10px 0;
+}
 .widget header {
   width: 100%;
   padding: 5px;
@@ -18,6 +20,10 @@
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid #fff;
+  font-size: 0.8em;
+}
+.widget .refresh {
+  font-size: 1.5em;
 }
 
 /* Weather Widget */
@@ -26,7 +32,6 @@ header.search {
 }
 .weather-widget h2 {
   padding: 0 5px;
-  font-size: 1.2rem;
   padding-right: 15px;
 }
 .search input {
@@ -42,7 +47,6 @@ header.search {
   border-radius: 50%;
   color: var(--accent-color);
   cursor: pointer;
-  font-size: 1.1rem;
 }
 .search button:hover {
   background-color: #fff;
@@ -62,7 +66,7 @@ header.search {
   justify-content: center;
 }
 .weather .container:first-of-type {
-  font-size: 1.1rem;
+  font-size: 1.2em;
 }
 .city {
   font-weight: 500;
@@ -77,25 +81,21 @@ header.search {
 }
 .weather .container:last-of-type {
   padding-top: 10px;
-  font-size: 0.9rem;
 }
 
 /* Fact Widget & WOD Widget */
 
 .fact-widget h2,
 .wod-widget h2 {
-  font-size: 1.2rem;
   padding: 5px;
 }
 .fact-widget i,
 .wod-widget i {
   color: var(--accent-color);
   cursor: pointer;
-  font-size: 1.3rem;
 }
 .fact-widget p,
 .wod-widget p {
-  font-size: 0.9rem;
   line-height: 1.5;
   padding: 10px;
   text-align: left;
@@ -115,19 +115,23 @@ header.search {
 /* Media Queries */
 @media only screen and (min-width: 768px) {
   .widgets-page {
-    padding: 0 80px;
-    gap: 20px;
+    padding: 0 8%;
   }
   .widgets-page header {
-    padding: 1rem;
-    justify-content: center;
-  }
-  .widgets-page header h2 {
-    padding-right: 10px;
+    padding: 1rem 100px;
+    font-size: 1em;
   }
   .weather {
-    gap: 10px;
+    font-size: 1.2em;
   }
+  .weather .container {
+    padding: 5px;
+  }
+  .city,
+  .high,
+  .humidity {
+  padding-right: 20px;
+}
   .fact-widget .fact {
     padding: 1rem 2rem;
   }
@@ -141,9 +145,7 @@ header.search {
 
 @media only screen and (min-width: 1024px) {
   .widgets-page {
-    padding: 0 15%;
-  }
-  .widgets-page {
+    padding: 0 10%;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
@@ -152,11 +154,17 @@ header.search {
   }
   .weather-widget {
     grid-area: a;
+    margin-bottom: 15px;
   }
   .fact-widget {
     grid-area: b;
+    margin: 0;
+    margin-right: 15px;
   }
   .wod-widget {
     grid-area: c;
+  }
+  .widget header {
+    padding: 1rem;
   }
 }

@@ -2,8 +2,10 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  padding: 0 10px;
-  gap: 10px;
+  padding: 0 5px;
+}
+.default-page section {
+  margin: 5px;
 }
 .section-img {
   height: 80%;
@@ -30,6 +32,7 @@
   overflow-y: scroll;
   transition: transform 1s ease-in-out;
   z-index: 999;
+  padding-bottom: 100px;
 }
 .section-container header h2 {
   width: max-content;
@@ -113,7 +116,6 @@ section.about .section-img {
 }
 .about-website {
   padding-top: 1rem;
-  padding-bottom: 100px;
 }
 .about-website h3 {
   text-align: center;
@@ -224,7 +226,6 @@ section.projects .section-img {
   display: flex;
   flex-direction: column;
   padding: 0 1rem;
-  margin-bottom: 100px;
 }
 .projects-card {
   background-color: rgb(244, 244, 244);
@@ -334,9 +335,11 @@ section.skills .section-img {
 }
 .skill .fa-caret-up {
   display: none;
+  margin: 10px;
 }
 .skill .fa-caret-down {
   cursor: pointer;
+  margin: 10px;
 }
 .skill.active .fa-caret-up {
   display: block;
@@ -349,11 +352,12 @@ section.skills .section-img {
   border-radius: inherit;
   height: 0;
   overflow: hidden;
-  transition: height 1s ease-in-out;
+  margin-bottom: 10px;
+  line-height: 1.5;
 }
 .skill.active .skill-info {
-  height: 100px;
-  overflow-y: scroll;
+  height: max-content;
+
 }
 .hard-skills h3 {
   color: var(--primary-color);
@@ -375,20 +379,16 @@ section.photos .section-img {
   background: no-repeat top/cover
     url(../media/img/27194EBB-9906-4F96-AFD1-2E8A821B5092_1_201_a.jpeg);
 }
-.section-photos {
-  padding-bottom: 100px;
-}
 .section-photos header p {
   padding: 0 1rem;
   font-size: 0.9rem;
   line-height: 1.5;
 }
 .photos-container {
-  padding: 1rem 5px;
   display: grid;
   grid-template-columns: 1fr;
   width: 100%;
-  gap: 5px;
+  padding: 5px;
 }
 .photos-container img {
   width: 100%;
@@ -396,6 +396,7 @@ section.photos .section-img {
   object-fit: cover;
   object-position: center;
   display: block;
+  margin-bottom: 5px;
 }
 
 /* Music */
@@ -404,7 +405,7 @@ section.music .section-img {
     url(../media/img/pexels-elviss-railijs-bitāns-1389429.jpg);
 }
 .section-music {
-  background-color: var(--secondary-color);
+  background-color: #bedfe7;
   padding-bottom: 100px;
 }
 .section-music header div {
@@ -416,7 +417,7 @@ section.music .section-img {
   padding: 10px 0;
 }
 .section-music header a {
-  color: var(--light-color);
+  color: var(--accent-color);
 }
 .music-player {
   margin: 0 10px;
@@ -476,6 +477,7 @@ section.music .section-img {
   font-size: 1.5rem;
   border: none;
   background-color: transparent;
+  cursor: pointer;
 }
 
 /* Github */
@@ -504,6 +506,7 @@ section.settings .section-img {
   color: #fff;
   border: none;
   border-radius: 5px;
+  cursor: pointer;
 }
 .settings-background .on-btn {
   background-color: green;
@@ -515,8 +518,10 @@ section.settings .section-img {
 /* Media Queries */
 @media only screen and (min-width: 768px) {
   .default-page {
-    column-gap: 20px;
     padding: 0 20px;
+  }
+  .default-page section {
+    margin: 5px 10px ;
   }
   .section-title {
     font-size: 1.3rem;
@@ -552,7 +557,6 @@ section.settings .section-img {
   .contact-form {
     margin: 1rem 20%;
     padding: 4rem;
-    gap: 2rem;
   }
   .input-container {
     padding: 1rem;
@@ -564,7 +568,6 @@ section.settings .section-img {
   /* Projects */
   .projects-container {
     padding: 0 10%;
-    gap: 3rem;
   }
   .card-details {
     padding: 2rem;
@@ -595,7 +598,6 @@ section.settings .section-img {
   }
   /* Settings */
   .settings-background {
-    gap: 10px;
     font-size: 1.2em;
   }
 }
@@ -603,7 +605,6 @@ section.settings .section-img {
 @media only screen and (min-width: 1024px) {
   .default-page {
     padding: 0 15%;
-    column-gap: 5%;
   }
   /* About */
   .personal {
@@ -629,14 +630,18 @@ section.settings .section-img {
   }
   .mission-statement,
   .code-of-ethics {
-    width: 30%;
+    width: 40%;
     height: 300px;
     display: inline-block;
-    margin: 1rem 10%;
+    margin: 1rem;
     padding: 1rem;
+  }
+  .mission-statement {
+    margin-left: 5%;
   }
   .code-of-ethics {
     float: right;
+    margin-right: 5%;
   }
   .about-website div {
     padding: 2rem 15%;
@@ -645,7 +650,10 @@ section.settings .section-img {
   .projects-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    padding: 0 5%;
+  }
+  .projects-card {
+    margin: 20px;
   }
   .card-btns button {
     padding: 10px 15px;
@@ -654,12 +662,12 @@ section.settings .section-img {
   .photos-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 5px;
   }
   .photos .photos-container img {
     height: 100%;
     max-height: 80vh;
+    margin: 0;
+    padding: 0;
   }
-}
-
-@media only screen and (min-width: 1440px) {
 }
